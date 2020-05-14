@@ -28,9 +28,51 @@ namespace Scrabble.Tests
       Word myWord = new Word ("bananas");
       int[] target = {3, 1, 1, 1, 1, 1, 1};
       //Act
-      int[] result = myWord.CharsToPoints();
+      char[] letterArray = myWord.WordToCharacters();
+      int[] result = myWord.CharsToPoints(letterArray);
       //Assert
       CollectionAssert.AreEqual(result, target);
     }
+
+    [TestMethod]
+    public void Word_StuffNotInDict_IntArray()
+    {
+      //Arrange
+      Word myWord = new Word ("42");
+      int[] target = {0,0};
+      //Act
+      char[] letterArray = myWord.WordToCharacters();
+      int[] result = myWord.CharsToPoints(letterArray);
+      //Assert
+      CollectionAssert.AreEqual(result, target);
+    }
+
+    [TestMethod]
+    public void Word_GetTotalPoints_Int()
+    {
+      //Arrange
+      Word myWord = new Word ("bananas");
+      int target = 9;
+      //Act
+      char[] letterArray = myWord.WordToCharacters();
+      int[] pointArray = myWord.CharsToPoints(letterArray);
+      int result = myWord.GetTotalPoints(pointArray);
+      //Assert
+      Assert.AreEqual(result, target);
+    }
   }
 }
+
+
+    // [TestMethod]
+    // public void Word_GetDoubleTripleLetters_Int()
+    // {
+    //   //Arrange
+    //   Word myWord = new Word ("bananas");
+    //   List<int> doubleLetters = new List<int> {2, 6};
+    //   //Act
+    //   char[] letterArray = myWord.WordToCharacters();
+    //   int[] pointArray = myWord.CharsToPoints(letterArray);
+    //   int result = myWord.GetTotalPoints(pointArray);
+    //   //Assert
+    //   Assert.AreEqual(result, target);

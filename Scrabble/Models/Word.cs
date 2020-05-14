@@ -20,13 +20,34 @@ namespace Scrabble.Models
       return letterArray;
     }
 
-    public int[] CharsToPoints()
+    public int[] CharsToPoints(char[] letterArray)
     {
-      int[] pointArray = new int [WordToCharacters().Length];
+      int[] pointArray = new int [letterArray.Length];
+      for (int i = 0; i < letterArray.Length; i++) 
+      {
+        bool hasValue = WordValues.TryGetValue(letterArray[i], out int value);
+        if (hasValue) 
+        {
+          int points = value;
+          pointArray[i] = points;
+        }
+        else
+        {
+          pointArray[i] = 0;
+        }
+      }
       return pointArray;
-      
     }
 
+    public int GetTotalPoints(int[] pointArray)
+    {
+      int totalPoints = 0;
+      foreach (int point in pointArray)
+      {
+        totalPoints += point;
+      }
+      return totalPoints;
+    }
     
 
 
