@@ -19,7 +19,7 @@ namespace Scrabble.Models
       char[] letterArray = Letters.ToCharArray();
       return letterArray;
     }
-
+    
     public int[] CharsToPoints(char[] letterArray)
     {
       int[] pointArray = new int [letterArray.Length];
@@ -48,7 +48,6 @@ namespace Scrabble.Models
       }
       return totalPoints;
     }
-    
 
 
   }

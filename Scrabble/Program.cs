@@ -14,13 +14,26 @@ namespace Program
       {
         if (run == "y")
         {
-        Console.WriteLine("Please enter a word to calculate the points");
-        string userWord = Console.ReadLine();
-        Word testWord = new Word (userWord);
-        char[] letterArray = testWord.WordToCharacters();
-        int[] pointArray = testWord.CharsToPoints(letterArray);
-        int result = testWord.GetTotalPoints(pointArray);
-        Console.WriteLine("Your word '" + userWord + "' is equal to " + result + " points.");
+          Console.WriteLine("Is your word on a double word score?\n y/n");
+          string doubleScore = Console.ReadLine();
+          Console.WriteLine("Is your word on a triple word score?\n y/n");
+          string tripleScore = Console.ReadLine();
+          Console.WriteLine("Please enter a word to calculate the points");
+          string userWord = Console.ReadLine();
+          Word testWord = new Word (userWord);
+          char[] letterArray = testWord.WordToCharacters();
+          int[] pointArray = testWord.CharsToPoints(letterArray);
+          int result = testWord.GetTotalPoints(pointArray);
+          if (doubleScore == "y")
+          {
+            result = result * 2;
+            Console.WriteLine(result);
+          } else if (tripleScore == "y")
+          {
+            result = result * 3;
+            Console.WriteLine(result);
+          }
+          Console.WriteLine("Your word '" + userWord + "' is equal to " + result + " points.");
         }
         else if (run == "n")
         {

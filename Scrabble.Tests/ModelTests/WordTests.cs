@@ -60,19 +60,40 @@ namespace Scrabble.Tests
       //Assert
       Assert.AreEqual(result, target);
     }
-  }
-}
 
 
     // [TestMethod]
-    // public void Word_GetDoubleTripleLetters_Int()
+    // public void Word_GetDoubleLetters_Int()
     // {
     //   //Arrange
     //   Word myWord = new Word ("bananas");
-    //   List<int> doubleLetters = new List<int> {2, 6};
+    //   List<int> target = new List<int> {2, 5};
     //   //Act
     //   char[] letterArray = myWord.WordToCharacters();
     //   int[] pointArray = myWord.CharsToPoints(letterArray);
+    //   List<int> result = myWord.GetDoubleLetters(pointArray); 
+    //   //Assert
+    //   CollectionAssert.AreEqual(result, target);
+    // }
+    // [TestMethod]
+    // public void Word_GetDoubled_Int()
+    // {
+    //  //Arrange
+    //   Word myWord = new Word ("bananas");
+    //   int target = 18;
+    //   //Act
+    //   char[] letterArray = myWord.WordToCharacters();
+    //   int[] pointArray = myWord.CharsToPoints(letterArray);
+    //   bool doubled = myWord.GetDoubled();
     //   int result = myWord.GetTotalPoints(pointArray);
     //   //Assert
     //   Assert.AreEqual(result, target);
+      
+    // }
+
+
+  }
+
+}
+
+
