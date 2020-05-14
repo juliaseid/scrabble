@@ -20,6 +20,13 @@ namespace Scrabble.Models
       return letterArray;
     }
 
+    public int[] CharsToPoints()
+    {
+      int[] pointArray = new int [WordToCharacters().Length];
+      return pointArray;
+      
+    }
+
     
 
 

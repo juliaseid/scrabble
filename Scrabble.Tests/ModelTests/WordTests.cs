@@ -19,7 +19,18 @@ namespace Scrabble.Tests
       char[] result = myWord.WordToCharacters();
       //Assert
       CollectionAssert.AreEqual(result, target);
+    }
 
+    [TestMethod]
+    public void Word_CharArraytoIntArray_IntArray()
+    {
+      //Arrange
+      Word myWord = new Word ("bananas");
+      int[] target = {3, 1, 1, 1, 1, 1, 1};
+      //Act
+      int[] result = myWord.CharsToPoints();
+      //Assert
+      CollectionAssert.AreEqual(result, target);
     }
   }
 }
